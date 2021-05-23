@@ -1,0 +1,24 @@
+	Rezolvare problema 1:
+Idee: Pentru tipul unu de aranjare a bacnotelor am dedus o formula. De exemplu presupunem
+ca vrem sa sortam n bacnote. Pe prima pozitie se pot pune in 5 moduri bacnotele
+(10, 50, 100, 200, 500), pe pozitia a doua se pot pune in 2 moduri bacnotele
+-> 5*2, pe pozitia a treia se pot pune in 2 moduri bacnotele -> 5*2*2 si asa mai departe. Astfel formula fiind 5*2^(n-1).
+Pentru tipul doi de aranjare a bacnotelor am dorit sa ma folosesc de o matrice. Prin urmare am atribuit fiecarei coloane cate o bacnota (coloana 0 - bacnota 10, coloana 1 - bacnota 50 si asa mai departe) si apoi urma sa completez coloanele cu nr de moduri in care se pot aranja bacnotele astfel incat ultima bacnota sa fie cea care a fost atribuita coloanei respective. La final se vor calcula de pe ultima linie toate elementele si astfel se va obtine rezultatul.
+Complexitate: complexitatea temporala este de O(n) - sau cel putin asa am incercat...	
+
+	Rezolvare problema 2:
+Idee: Asemanatoare cu rezolvarea problemei spectacolelor. Am introdus coordonatele
+fiecarui gard intr-un vector pe care mai apoi l-am sortat in ordine crescatoare
+functie de x-ul gardurilor. In cazul in care doi x erau egali, am ales sa sortez 
+descrescator in functie de y-ul gardurilor. Apoi, parcurgand o singura data vectorul,
+am verificat daca gardul la care ma aflam respecta regula de eliminare cu gardul de dinaintea lui. Daca se indeplinea, cresteam nr de garduri reduntante, altfel
+treceam mai departe.
+Complexitate: complexitatea temporala este de O(n*logn)
+
+	Rezolvare problema 3:
+Idee: M-am gandit la problema rucsacului pentru acest exercitiu. Folosindu-ma de programarea dinamica, am ales o matrice dp (asa cum se poate observa in cod), unde dp[i][j] reprezinta numarul de combinatii prin care se obtinua suma j din primii i copii. Am gasit o formula pentru completarea acestei matrici (asa cum se poate observa in cod).
+Complexitatea: complexitatea temporala este de O(n)
+
+	Rezolvare problema 4:
+Idee: Pentru aceasta problema am gandit astfel. La fel ca la problema 2, doresc sa introduc perechea (greutate, repetari) intr-un vector ca mai apoi sa-l sortez crescator in functie de greutate. Presupun ca gantera x ar fi cea mai usoara, ca mai apoi sa iau numarul maxim de ridicari din sirul sortat. Am ales sa ma folosesc de o coada de prioritati pentru a introduce si a scoate greutatile pentru comparari. Atunci cand o sa parcurg vectorul pentru a realiza compararile necesare, am sa il parcurg de la coada la cap. Se poate observa mai bine in cod.
+Complexitate: complexitatea temporala este de O(n*logn)

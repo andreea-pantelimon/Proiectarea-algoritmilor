@@ -1,0 +1,36 @@
+Rezolvare problema 1:
+Idee: Pentru rezolvarea acestei probleme m-am gandit sa aplic un DFS. Prin urmare, asa cum se poate
+ observa si in cod, in mat am retinut drumurile (muchiile), iar in start am retinut pozitia din care incep
+legaturile pentru nodul n(start[n]). Pentru a mai amortiza din timp am facut un binary-search si am
+verificat daca Robin poate fi prins, asa cum se poate observa si in cod. In functia check, am avut grija sa
+completez array-ul occupied si sa trec nodurile din viz ca nevizitate. Apoi nu mai imi ramane decat sa fac 
+DFS - ul avand grija ca conditiile puse sa fie indeplinite.
+
+Complexitate temporala: O(|V| + |E|).
+
+Rezolvare problema 2:
+Idee: Initial am incercat sa o rezolv asemanator cu problema 1, insa am constat ca nu
+este cea mai eficienta metoda sa folosesc un DFS (multe TLE - uri) . Prin urmare, citind mai bine
+enuntul, am realizat ca se poate aplica algoritmul lui Bellman-Ford, exact cum a fost
+rezolvata problema din laboratorul 9 - cel de distante minime. Prin urmare, am rezolvat aceasta 
+problema aplicand algoritmul mentionat. Mi-am format un vector de adj, cu noduri 
+adiacente, un vector d in care sa retin drumurile pentru fiecare nod, un array de 
+visited in care sa retin nodurile parcurse. In cod se pot observa mai bine pasii pe care i-am
+urmat si de asemenea conditia de relxare pe care am pus-o.
+
+Complexitate: O(|V| * |E|)
+
+Rezolvare problema 3:
+Idee: La aceasta problema m-am gandit sa aplic algoritmul lui Dijkstra, gandindu-ma ca energia sa
+ fie costul (singura exceptie fiind ca eu imi doresc sa am energia cat mai mare). Asa ca, ca si conditie
+de relaxare am pus visited[v] == false && d[v] < d[u] * (1 - cost / 100), unde visited verifica daca 
+nodul curent nu a fost vizitat, iar energia nodului curent trebuie sa fie mai mica decat formula
+enuntata (cost - energia nodului curent, d[u] - enregia din pq(coada de prioritate)). La final, energia
+va fi retinuta in d[n] si nu mai ramane decat sa printez path-ul pe care am avut grija sa il salvez
+atunci cand ma aflam in conditia de relaxare, asa cum se poate observa si in cod.
+
+Complexitate temporala: O(|V|lg|V| + |E|)
+
+Rezolvare problema 4:
+Aceasta problema nu a fost rezolvata 
+
